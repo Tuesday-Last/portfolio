@@ -13,3 +13,13 @@ Projects.prototype.tohtml = function() {
 
   $newProject
 };
+
+function navBarHandler (){
+  $('#navBar').on("click", 'li', function() {
+    $(".tab-content").hide();
+    $("#" + $(this).data('tab')).fadeIn();
+  });
+
+  $('#navBar .tab:first').click(); 
+};
+

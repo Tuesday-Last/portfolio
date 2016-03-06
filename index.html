@@ -10,21 +10,24 @@
             Sam Nortz
           </h2>
     </header>
-    <nav>
+    <nav id="navBar">
       <ul>
-        <li>Projects</li>
-        <li>About Me</li>
+        <li id="projects" data-tab="project">Projects</li>
+        <li id="abouts" data-tab="about-me">About Me</li>
         <li><a href="https://www.linkedin.com/in/samnortz">LinkedIn</a></li>
         <li><a href="https://github.com/Tuesday-Last">GitHub</a></li>
       </ul>
     </nav>
-    <main id="projects">
+    <section class="tab-content" id="project">
       <section class="template">
         <h3 id="projectTitle">Title</h3>
         <img class="pImage" src="">
         <p class="pBlerb">In this project I built a thing, it does things</p>
         <a class="pAddress" href="">You can find it here!</a>
       </section>
+    </section>
+    <main class="tab-content" id="about-me">
+      <p>Hi! I'm Sam Nortz and I made this site!</p>
     </main>
   </body>
 </html>
