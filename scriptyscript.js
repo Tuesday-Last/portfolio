@@ -8,10 +8,15 @@ function Projects (project) {
   projects.push(this);
 };
 
-Projects.prototype.tohtml = function() {
-  var $newProject = $('projects.template').clone();
+Projects.prototype.toHtml = function() {
+  var $newProject = $('section.template').clone();
+  $newProject.removeClass("template");
+  $newProject.find("#projectTitle").html(this.title);
+  $newProject.find(".pImage").html(this.image);
+  $newProject.find(".pBlerb").html(this.blerb);
+  $newProject.find(".pAddress").html(this.address);
 
-  $newProject
+  return $newProject;
 };
 
 function navBarHandler (){
@@ -21,5 +26,15 @@ function navBarHandler (){
   });
 
   $('#navBar .tab:first').click(); 
+  console.log("navBar clicked");
 };
 
+rawProjects.forEach(function(ele) {
+  projects.push(new Projects(ele));
+})
+
+projects.forEach(function(p){
+  $('#project').append(p.toHtml())
+});
+
+navBarHandler();
