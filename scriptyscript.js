@@ -28,7 +28,7 @@ function navBarHandler (){
     $("#" + $(this).data('tab')).fadeIn();
   });
 
-  $('#navBar .tab:first').click();
+  $('#navBar, ul, li:first').click();
   console.log("navBar clicked");
 };
 
