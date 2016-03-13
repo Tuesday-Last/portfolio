@@ -44,11 +44,13 @@
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
     -webkit-padding-start: 40px;
+    padding: 2%;
   }
 
   .navBar, ul, li {
     display: block;
     padding: 0.5%;
+    text-align: left;
 
     body {
     padding: 1em;

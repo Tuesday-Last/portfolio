@@ -1,31 +1,6 @@
-/*.template {
-  display: none;
+body {
+  font-family: 'Noticia Text', serif;
 }
-#navBar {
-  font-size: 1.25em;
-  font-size: bold;
-  text-align: left;
-
+h1, h2 {
+  font-family: 'Bree Serif', serif;
 }
-
-@media screen and (min-width: 601px) {
-
-  .template {
-    display: none;
-  }
-
-   #navBar ul {
-     display:block;
-     font-size:1em;
-   }
-
-   #navBar li {
-     padding-right:2em;
-     display:inline-block;
-   }
-
-   #navBar:hover ul {
-     display:block;
-     font-size:1em;
-   }
- }*/

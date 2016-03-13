@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
+    <link href='https://fonts.googleapis.com/css?family=Bree+Serif|Noticia+Text:400,700' rel='stylesheet' type='text/css'>
     <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>
     <link rel="stylesheet" href="vendor/styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
@@ -14,7 +15,7 @@
           <div class="byline">Published on <time pubdate datetime={{publishDate}}>{{publishDate}}</time>
           </div>
         </header>
-        <section class="blerb">{{blerb}}</section>
+        <section class="blerb">{{{blerb}}}</section>
         <a href={{address}} class="address">{{title}} &rarr;</a>
       </article>
     </script>
