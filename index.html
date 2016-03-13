@@ -4,6 +4,7 @@
     <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>
     <link rel="stylesheet" href="vendor/styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/myStyle.css">
 
     <script id="projectTemplate" type="text/x-handlebars-template">
@@ -18,26 +19,27 @@
       </article>
     </script>
   </head>
-  <body>
-    <header>
-          <h1>
-            Sam Nortz
-          </h1>
+  <body >
+    <header class="header">
+          <h1>Sam Nortz</h1>
     </header>
-    <nav id="navBar">
-      <ul>
-        <li id="projects" data-tab="project">Projects</li>
-        <li id="abouts" data-tab="about-me">About Me</li>
-        <li><a href="https://www.linkedin.com/in/samnortz">LinkedIn</a></li>
-        <li><a href="https://github.com/Tuesday-Last">GitHub</a></li>
-      </ul>
-    </nav>
-    <section class="tab-content" id="project">
+    <section class="wrapper">
+      <nav id="navBar">
+        <ul>
+          <li id="projects" data-tab="project">Projects</li>
+          <li id="abouts" data-tab="about-me">About Me</li>
+          <li><a href="https://www.linkedin.com/in/samnortz">LinkedIn</a></li>
+          <li><a href="https://github.com/Tuesday-Last">GitHub</a></li>
+        </ul>
+      </nav>
+      <section class="tab-content main" id="project">
 
+      </section>
+      <main class="tab-content main" id="about-me">
+        <p>Hi! I'm Sam Nortz and I made this site! I started coding in late 2015 and greatly enjoyed the Codefellows classes and learnign to build static websites and functioning applications with them. Before coding I studied Biology at Whitman College, worked as research intern for a labrotory in San Diego, a digital advertisment campaign manager for Marchex in Seattle. Currently I'm working as an landscaping architectual contractor.</p>
+      </main>
+      <p class="footer"></p>
     </section>
-    <main class="tab-content" id="about-me">
-      <p>Hi! I'm Sam Nortz and I made this site! I started coding in late 2015 and greatly enjoyed the Codefellows classes and learnign to build static websites and functioning applications with them. Before coding I studied Biology at Whitman College, worked as research intern for a labrotory in San Diego, a digital advertisment campaign manager for Marchex in Seattle. Currently I'm working as an landscaping architectual contractor.</p>
-    </main>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="projectHolder.js"></script>

@@ -1,0 +1,56 @@
+.navBar, ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+.navBar, ul, li {
+  display: inline;
+  padding: 5%;
+}
+
+@media screen and (min-width: 601px) {
+  .header{
+    margin-left: 10%;
+  }
+  .wrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .wrapper > * {
+    padding: 10px;
+    flex: 1 0 auto;
+  }
+
+  .footer {
+  }
+
+  .main {
+    text-align: left;
+    max-width: 70%;
+  }
+
+  .navBar {
+    max-width: 30%;
+    text-align: left;
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+  }
+
+  .navBar, ul, li {
+    display: block;
+    padding: 0.5%;
+
+    body {
+    padding: 1em;
+  }
+}
