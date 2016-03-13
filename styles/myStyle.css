@@ -1,3 +1,30 @@
 .template {
   display: none;
 }
+#navBar {
+  font-size: 1.25em;
+  font-size: bold;
+  
+}
+
+@media screen and (min-width: 601px) {
+
+  .template {
+    display: none;
+  }
+
+   #navBar ul {
+     display:block;
+     font-size:1em;
+   }
+
+   #navBar li {
+     padding-right:2em;
+     display:inline-block;
+   }
+
+   #navBar:hover ul {
+     display:block;
+     font-size:1em;
+   }
+ }

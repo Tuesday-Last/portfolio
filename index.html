@@ -1,9 +1,22 @@
 <!DOCTYPE HTML>
 <html>
   <head>
+    <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>
     <link rel="stylesheet" href="vendor/styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/myStyle.css">
+
+    <script id="projectTemplate" type="text/x-handlebars-template">
+      <article class="project" data-category={{category}} data-date={{publishDate}}>
+        <header>
+          <h1>{{title}}</h1>
+          <div class="byline">Published on <time pubdate datetime={{publishDate}}>{{publishDate}}</time>
+          </div>
+        </header>
+        <section class="blerb">{{blerb}}</section>
+        <a href={{address}} class="address">{{title}} &rarr;</a>
+      </article>
+    </script>
   </head>
   <body>
     <header>
@@ -20,12 +33,7 @@
       </ul>
     </nav>
     <section class="tab-content" id="project">
-      <section class="template">
-        <h3 id="projectTitle">Title</h3>
-        <img class="pImage" src="">
-        <p class="pBlerb">In this project I built a thing, it does things</p>
-        <a class="pAddress" href="">You can find it here!</a>
-      </section>
+
     </section>
     <main class="tab-content" id="about-me">
       <p>Hi! I'm Sam Nortz and I made this site!</p>

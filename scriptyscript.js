@@ -5,18 +5,21 @@ function Projects (project) {
   this.image = project.image;
   this.blerb = project.blerb;
   this.address = project.address;
-  projects.push(this);
+  this.publishDate = project.publishDate;
 };
 
 Projects.prototype.toHtml = function() {
-  var $newProject = $('section.template').clone();
-  $newProject.removeClass("template");
-  $newProject.find("#projectTitle").html(this.title);
-  $newProject.find(".pImage").html(this.image);
-  $newProject.find(".pBlerb").html(this.blerb);
-  $newProject.find(".pAddress").html(this.address);
-
-  return $newProject;
+    var getTemplate = $('#projectTemplate').html();
+    var templateToCompile = Handlebars.compile(getTemplate);
+    return templateToCompile(this);
+    // var $newProject = $('section.template').clone();
+    // $newProject.removeClass("template");
+    // $newProject.find("#projectTitle").html(this.title);
+    // $newProject.find(".pImage").html(this.image);
+    // $newProject.find(".pBlerb").html(this.blerb);
+    // $newProject.find(".pAddress").html(this.address);
+    //
+    // return $newProject;
 };
 
 function navBarHandler (){
@@ -25,7 +28,7 @@ function navBarHandler (){
     $("#" + $(this).data('tab')).fadeIn();
   });
 
-  $('#navBar .tab:first').click(); 
+  $('#navBar .tab:first').click();
   console.log("navBar clicked");
 };
 

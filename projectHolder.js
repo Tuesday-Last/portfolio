@@ -1,8 +1,10 @@
-var rawProjects =[
-{
-  title: 'Poject test',
-  image: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAVBAAAAJDI5Y2JmNWFhLTk0MGItNGQyNi05YzI4LTYzOTcxMGRiMzc3OQ.jpg",
-  blerb: "Project test blerb thing",
-  address: "https://github.com/Tuesday-Last/cookie-stand",
-}
+var rawProjects = [
+  {
+    title: "Pat's Salmon Cookies",
+    image: "http://tuesday-last.github.io/cookie-stand/images/salmon.png",
+    blerb: "A project from Codefellows 201 course. The goal of the project was to make a proposed website for the fictional Pat's Salmon Cookies franchise. Theh main objective was to create a cookie sale predictor for each of the Pat's individual stores",
+    address: "http://tuesday-last.github.io/cookie-stand/",
+    publishDate: "Feb 1st, 2016",
+
+},
 ]
