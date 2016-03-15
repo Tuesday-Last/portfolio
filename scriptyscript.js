@@ -4,6 +4,7 @@ function Projects (project) {
   this.title = project.title;
   this.image = project.image;
   this.blerb = project.blerb;
+  this.category = 
   this.address = project.address;
   this.publishDate = project.publishDate;
 };
@@ -21,7 +22,6 @@ function navBarHandler (){
   });
 
   $('#navBar, ul, li:first').click();
-  console.log("navBar clicked");
 };
 
 rawProjects.forEach(function(ele) {

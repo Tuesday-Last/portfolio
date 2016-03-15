@@ -6,6 +6,8 @@
 .navBar, ul, li {
   display: inline;
   padding: 5%;
+  font-size: 1.25em;
+  font-style: bold;
 }
 
 @media screen and (min-width: 601px) {
@@ -31,11 +33,11 @@
 
   .main {
     text-align: left;
-    max-width: 70%;
+    max-width: 80%;
   }
 
   .navBar {
-    max-width: 30%;
+    max-width: 20%;
     text-align: left;
     display: block;
     list-style-type: disc;
@@ -51,6 +53,7 @@
     display: block;
     padding: 0.5%;
     text-align: left;
+    font-size: 1em;
 
     body {
     padding: 1em;
