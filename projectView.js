@@ -1,4 +1,4 @@
-articleView.populateFilters = function() {
+projectView.populateFilters = function() {
   $('article').each(function() {
     if (!$(this).hasClass('template')) {
       var val = $(this).find('address a').text();
@@ -14,7 +14,7 @@ articleView.populateFilters = function() {
   });
 };
 
-articleView.handleAuthorFilter = function() {
+projectView.handleFilter = function() {
   $('#author-filter').on('change', function() {
     if ($(this).val()) {
       $('article').hide();
@@ -26,3 +26,8 @@ articleView.handleAuthorFilter = function() {
     $('#category-filter').val('');
   });
 };
+projectView.renderPage = function() {
+  projectView.handleFilter();
+  projectView.populateFilters();
+  scriptyscript.renderer();
+}
