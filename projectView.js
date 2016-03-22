@@ -1,4 +1,4 @@
-projectView.populateFilters = function() {
+populateFilters = function() {
   $('article').each(function() {
     if (!$(this).hasClass('template')) {
       var val = $(this).find('address a').text();
@@ -14,7 +14,7 @@ projectView.populateFilters = function() {
   });
 };
 
-projectView.handleFilter = function() {
+handleFilter = function() {
   $('#author-filter').on('change', function() {
     if ($(this).val()) {
       $('article').hide();
@@ -26,8 +26,3 @@ projectView.handleFilter = function() {
     $('#category-filter').val('');
   });
 };
-projectView.renderPage = function() {
-  projectView.handleFilter();
-  projectView.populateFilters();
-  scriptyscript.renderer();
-}

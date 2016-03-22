@@ -24,42 +24,44 @@ function navBarHandler (){
   $('#navBar, ul, li:first').click();
 };
 
-function renderer () {
-rawProjects.forEach(function(ele) {
-  projects.push(new Projects(ele));
-});
 
-projects.forEach(function(p){
-  $('#project').append(p.toHtml())
-});
-};
-
-navBarHandler();
-Project.load = function(rawData) {
-  rawProjects.sort(function(old, newish) {
-    return (new Date(newish.publishedDate)) - (new Date(old.publishedDate));
-  });
-
-  rawProjects.forEach(function(ele) {
-    projects.push(new Project(ele));
-  })
-}
 Projects.fetch = function() {
   if (localStorage.rawProjects) {
-    Project.load(JSON.parse(localStorage.rawProjects));
-    projectView.renderPage();//(); //DONE: Change this fake method call to the correct one that will render the index page.
+    Projects.load(JSON.parse(localStorage.rawProjects));
+    Projects.renderer();
   } else {
     var newRawProjects = $.ajax({
       type: "GET",
       url: "projectHolder.json",
       success: function (data, status, xhr) {
-        var stringRawData = JSON.stringify(data);
+        var stringRawProjects = JSON.stringify(data);
         localStorage.setItem("rawProjects", stringRawProjects);
-        Project.load(JSON.parse(localStorage.rawProjects))
-        projectView.renderPage()
+        Projects.load(JSON.parse(localStorage.rawProjects))
+        Projects.renderer()
         console.log("AJAX call successful");
       },
-      error: function(response, status, error){
-        console.log("Oops, Status:" + status + " Error:" + error);
+      error: function(response, status, error) {
+        console.log("Oops, Status: " + status + " Error:" + error);
       },
+    });
+  }
+};
+
+Projects.load = function(rawProjects) {
+  rawProjects.sort(function(old, newish) {
+    return (new Date(newish.publishedDate)) - (new Date(old.publishedDate));
   });
+
+  rawProjects.forEach(function(ele) {
+    projects.push(new Projects(ele));
+  })
+}
+
+Projects.renderer = function() {
+  handleFilter();
+  populateFilters();
+  navBarHandler();
+  projects.forEach(function(p){
+    $('#project').append(p.toHtml())
+  });
+};
