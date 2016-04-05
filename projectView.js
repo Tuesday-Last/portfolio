@@ -1,3 +1,5 @@
+
+
 populateFilters = function() {
   $('article').each(function() {
     if (!$(this).hasClass('template')) {
