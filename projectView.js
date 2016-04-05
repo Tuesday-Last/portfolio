@@ -1,30 +1,31 @@
-
-
-populateFilters = function() {
-  $('article').each(function() {
-    if (!$(this).hasClass('template')) {
-      var val = $(this).find('address a').text();
-      var optionTag = '<option value="' + val + '">' + val + '</option>';
-      $('#author-filter').append(optionTag);
-
-      val = $(this).attr('data-category');
-      optionTag = '<option value="' + val + '">' + val + '</option>';
-      if ($('#category-filter option[value="' + val + '"]').length === 0) {
-        $('#category-filter').append(optionTag);
-      }
-    }
+function projectListPop (){
+  Projects.projectList = Projects.all.map(function(projects) {
+      listObj = '<li class=listItem data="' + projects.title + '">' + projects.title + '</li>'
+        return listObj;
+  });
+  Projects.projectList.forEach(function(p){
+    $('#projectsList').append(p)
   });
 };
 
-handleFilter = function() {
-  $('#author-filter').on('change', function() {
-    if ($(this).val()) {
-      $('article').hide();
-      $('article[data-author="' + $(this).val() + '"]').fadeIn();
-    } else {
-      $('article').fadeIn();
-      $('article.template').hide();
-    }
-    $('#category-filter').val('');
+function navBarHandler (){
+  $('#navBar').on("click", 'li', function() {
+    $(".tab-content").hide();
+    $("#" + $(this).data('tab')).fadeIn();
   });
+
+  $('#navBar, ul, li:first').click();
+  $('#projectsList').hide();
+  $('#projects').hover(function(){
+    $('#projectsList').show();
+  },
+  function(){
+    $('#projectsList').hide();
+  })
+  $('#projectsList').hover(function(){
+    $('#projectsList').show();
+  },
+  function(){
+    $('#projectsList').hide();
+  })
 };
