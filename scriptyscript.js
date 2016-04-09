@@ -11,16 +11,10 @@
 
   Projects.all = [];
 
-  Projects.prototype.toHtml = function() {
-      var getTemplate = $('#projectTemplate').html();
-      var templateToCompile = Handlebars.compile(getTemplate);
-      return templateToCompile(this);
-  };
-
-  Projects.fetch = function() {
+  Projects.fetch = function(next) {
     if (localStorage.rawProjects) {
       Projects.load(JSON.parse(localStorage.rawProjects));
-      Projects.renderer();
+      next();
     } else {
       var newRawProjects = $.ajax({
         type: "GET",
@@ -29,7 +23,7 @@
           var stringRawProjects = JSON.stringify(data);
           localStorage.setItem("rawProjects", stringRawProjects);
           Projects.load(JSON.parse(localStorage.rawProjects))
-          Projects.renderer()
+          next()
           console.log("AJAX call successful");
         },
         error: function(response, status, error) {
@@ -51,13 +45,5 @@
 
   Projects.projectList = [];
 
-  Projects.renderer = function() {
-    projectListPop();
-    navBarHandler();
-    Projects.all.forEach(function(p){
-      $('#project').append(p.toHtml())
-    });
-
-  };
   module.Projects = Projects;
 })(window);
