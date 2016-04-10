@@ -14,6 +14,7 @@
   Projects.fetch = function(next) {
     if (localStorage.rawProjects) {
       Projects.load(JSON.parse(localStorage.rawProjects));
+      console.log("Localstorage full")
       next();
     } else {
       var newRawProjects = $.ajax({
@@ -23,7 +24,7 @@
           var stringRawProjects = JSON.stringify(data);
           localStorage.setItem("rawProjects", stringRawProjects);
           Projects.load(JSON.parse(localStorage.rawProjects))
-          next()
+          next();
           console.log("AJAX call successful");
         },
         error: function(response, status, error) {
@@ -37,7 +38,7 @@
     rawProjects.sort(function(old, newish) {
       return (new Date(newish.publishedDate)) - (new Date(old.publishedDate));
     });
-
+    Projects.all = []
     rawProjects.forEach(function(ele) {
       Projects.all.push(new Projects(ele));
     })

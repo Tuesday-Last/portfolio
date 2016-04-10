@@ -6,8 +6,8 @@
     $('#about-me').show();
   }
   controller.main = function(){
-    Projects.fetch();
-    
+    Projects.fetch(projectVeiwer.renderer);
+
   }
   module.controller = controller;
 })(window);
