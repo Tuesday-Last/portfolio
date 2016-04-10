@@ -1,23 +1,55 @@
 <!DOCTYPE HTML>
 <html>
   <head>
+    <link href='https://fonts.googleapis.com/css?family=Bree+Serif|Noticia+Text:400,700' rel='stylesheet' type='text/css'>
+    <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>
+    <script src="/vendor/scripts/page.js"></script>
     <link rel="stylesheet" href="vendor/styles/normalize.css">
-    <link rel="stylesheet" href="myStyle.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/myStyle.css">
+
+    <script id="projectTemplate" type="text/x-handlebars-template">
+      <article class="project" data-category={{category}} data-date={{publishDate}}>
+        <header>
+          <h2>{{title}}</h2>
+          <div class="byline">Published on <time pubdate datetime={{publishDate}}>{{publishDate}}</time>
+          </div>
+        </header>
+        <section class="blerb">{{{blerb}}}</section>
+        <a href={{address}} class="address">{{title}} &rarr;</a>
+      </article>
+    </script>
+
   </head>
-  <body>
-    <header>
-          <h2>
-            Kilovolt Blog!
-          </h2>
+  <body >
+    <header class="header">
+          <h1>Sam Nortz</h1>
     </header>
-    <nav>
+    <nav id="navBar">
       <ul>
-        <li>Projects</li>
-        <li>About Me</li>
-        <li>LinkedIn</li>
+        <li id="projects" data-tab="project"><a href="/"> Projects</a></li>
+        <ul id="projectsList">
+        </ul>
+        <li id="abouts" data-tab="about-me"><a href="/about"> About Me</a></li>
+        <li><a href="https://www.linkedin.com/in/samnortz">LinkedIn</a></li>
+        <li><a href="https://github.com/Tuesday-Last">GitHub</a></li>
       </ul>
     </nav>
-    <div class="projects">
-    </div>
+    <section class="wrapper">
+      <section class="tab-content main" id="project">
+
+      </section>
+      <main class="tab-content main" id="about-me">
+        <p>Hi! I'm Sam Nortz and I made this site! I started coding in late 2015 and greatly enjoyed the Codefellows classes and learnign to build static websites and functioning applications with them. Before coding I studied Biology at Whitman College, worked as research intern for a labrotory in San Diego, a digital advertisment campaign manager for Marchex in Seattle. Currently I'm working as an landscaping architectual contractor.</p>
+      </main>
+      <p class="footer"></p>
+    </section>
   </body>
-</html>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="projectHolder.json"></script>
+  <script src="projectView.js"></script>
+  <script src="scriptyscript.js"></script>
+  <script src="controller.js"></script>
+  <script src='routes.js'></script>
+  </html>
