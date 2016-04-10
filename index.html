@@ -26,30 +26,35 @@
     <header class="header">
           <h1>Sam Nortz</h1>
     </header>
-    <nav id="navBar">
-      <ul>
-        <li id="projects" data-tab="project"><a href="/"> Projects</a></li>
-        <ul id="projectsList">
-        </ul>
-        <li id="abouts" data-tab="about-me"><a href="/about"> About Me</a></li>
-        <li><a href="https://www.linkedin.com/in/samnortz">LinkedIn</a></li>
-        <li><a href="https://github.com/Tuesday-Last">GitHub</a></li>
-      </ul>
-    </nav>
     <section class="wrapper">
-      <section class="tab-content main" id="project">
-
-      </section>
-      <main class="tab-content main" id="about-me">
+        <nav id="navBar">
+          <ul>
+            <li id="projects" data-tab="project"><a href="/"> Projects</a></li>
+            <ul id="projectsList">
+            </ul>
+            <li id="abouts" data-tab="about-me"><a href="/about"> About Me</a></li>
+            <li><a href="https://www.linkedin.com/in/samnortz">LinkedIn</a></li>
+            <li><a href="https://github.com/Tuesday-Last">GitHub</a></li>
+          </ul>
+        </nav>
+      <main>
+        <section class="tab-content main" id="project">
+        </section>
+        <section class="tab-content main" id="about-me">
         <p>Hi! I'm Sam Nortz and I made this site! I started coding in late 2015 and greatly enjoyed the Codefellows classes and learnign to build static websites and functioning applications with them. Before coding I studied Biology at Whitman College, worked as research intern for a labrotory in San Diego, a digital advertisment campaign manager for Marchex in Seattle. Currently I'm working as an landscaping architectual contractor.</p>
+        <ul></ul>
+      </section>
       </main>
       <p class="footer"></p>
     </section>
   </body>
+  <script src='/githubtoken.js'></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="projectHolder.json"></script>
   <script src="projectView.js"></script>
   <script src="scriptyscript.js"></script>
+  <script src='githubCaller.js'></script>
+  <script src="pastProjects.js"></script>
   <script src="controller.js"></script>
   <script src='routes.js'></script>
   </html>

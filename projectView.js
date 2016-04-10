@@ -35,7 +35,8 @@
   projectVeiwer.renderer = function() {
     console.log("renderer called")
     $('#project').show().siblings().hide();
-    $('#projects project').remove();
+    $('#project .project').remove();
+
     Projects.all.forEach(function(p){
       console.log('renderer sub routine')
       $('#project').append(handleHandlebar(p))
